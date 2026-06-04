@@ -1,0 +1,90 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Cinzel:wght@400;700&family=Frank+Ruhl+Libre:wght@300;400;700&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-gothic: "Cinzel", serif;
+  --font-hebrew: "Frank Ruhl Libre", serif;
+  
+  --color-brand-gold: #000000;
+  --color-brand-dark: #FFFFFF;
+  --color-brand-cream: #F9F9F9;
+}
+
+@layer base {
+  body {
+    @apply bg-transparent text-black font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-gothic tracking-widest uppercase;
+  }
+
+  .hebrew {
+    @apply font-hebrew;
+    direction: rtl;
+  }
+}
+
+.premium-shadow {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+}
+
+.glass-header {
+  @apply sticky top-0 z-50 bg-[#FAFAFA]/40 backdrop-blur-md border-b border-black/10;
+}
+
+.btn-premium {
+  @apply px-8 py-4 bg-black text-white font-medium transition-all duration-500 hover:bg-white hover:text-black border border-black disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-[0.3em] text-[10px];
+}
+
+.btn-outline {
+  @apply px-8 py-4 border border-black/30 text-black font-medium transition-all duration-500 hover:border-black hover:bg-black hover:text-white uppercase tracking-[0.3em] text-[10px];
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-white;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-black/20 hover:bg-black/40;
+}
+
+.gothic-border {
+  @apply border border-black/10 relative;
+}
+
+.gothic-border::before {
+  content: '';
+  @apply absolute -top-1 -left-1 w-2 h-2 border-t border-l border-black/40;
+}
+
+.gothic-border::after {
+  content: '';
+  @apply absolute -bottom-1 -right-1 w-2 h-2 border-b border-r border-black/40;
+}
+
+/* Traditional Jewish Motif - subtle geometric pattern */
+.jewish-motif {
+  background-image: radial-gradient(circle, rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bw-image {
+  filter: grayscale(100%) contrast(110%);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bw-image:hover {
+  filter: grayscale(0%) contrast(100%);
+}
+
+.fade-mask {
+  mask-image: linear-gradient(to bottom, white 80%, transparent 100%);
+}
