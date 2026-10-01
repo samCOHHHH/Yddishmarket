@@ -1,20 +1,28 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Yddish Market
 
-# Run and deploy your AI Studio app
+Prototype of a **marketplace for independent artisan brands**: each vendor gets a shop page, a product catalog and a profile, and visitors can browse every brand in one place.
 
-This contains everything you need to run your app locally.
+Built with **Google AI Studio** as a fast way to go from idea to working app.
 
-View your app in AI Studio: https://ai.studio/apps/aa2bc1d7-74e0-43b4-b8ac-eeb33c3a4402
+## Features
+- Vendor profile (name, description, rating, verified badge, location)
+- Product catalog per vendor
+- Partner brand logos on the home page
 
-## Run Locally
+## Stack
+- **React** + **TypeScript** (Vite)
+- **Gemini API** for AI features
+- CSS
 
-**Prerequisites:**  Node.js
+## Run locally
+**Prerequisite:** Node.js
 
+```bash
+npm install
+# add your key in .env.local
+echo "GEMINI_API_KEY=your_key_here" > .env.local
+npm run dev
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Status
+Prototype: the catalog starts empty and vendor data is mocked in `constants.ts`.
